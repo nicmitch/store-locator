@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Gmaps Store Locator</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <script type="module" src="js/storeLocator.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  
+  <div class="storelocator-panel" id="storelocator-panel">
+    <div class="storelocator-panel__container">
+
+      <button class="storelocator-panel__close togglestorelocatorsPanel">x</button>
+
+        <div class="storelocator-panel__left">
+          <div id="storelocator-map"></div>
+          <div class="storelocator-panel__legend"></div>
+        </div>
+        <div class="storelocator-panel__right">
+
+          <div class="storelocator-panel__search">
+
+            <div class="storelocator-panel__search-intro">
+              <h1 class="storelocator-panel__title">Cerca la filiale <br>più vicina a te</h1>
+
+              <div id="storelocator-searchform-checkpoint"></div>
+              <form id="storelocator-searchform" onsubmit="return false">
+                <div class="input-group">
+                  <input class="input-group-field" maxlength="256" name="add" placeholder="Il tuo indirizzo/città" type="text" id="find-closest-value">
+                  <div class="input-group-button">
+                    <button type="submit">Cerca</button>
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+            <div class="storelocator-panel__search-results">  
+              <div id="storelocator-results" class="pt--05"></div>
+              <div id="directions"></div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    var stores = [
+      { 
+        "lat": "41.9028",
+        "lng":"12.4964",
+        "cat":"cat 1",
+        "ID": 1,
+        "color" : 'blue',
+        "content":"Sample content",
+        "title":"Rome"
+      },
+      { 
+        "lat": "45.4642",
+        "lng":"9.1900",
+        "cat":"cat 2",
+        "ID": 2,
+        "color" : 'cyan',
+        "content":"Sample content",
+        "title":"Milan"
+      },
+      { 
+        "lat": "40.8518",
+        "lng":"14.2681",
+        "cat":"cat 2",
+        "ID": 3,
+        "color" : 'cyan',
+        "content":"Sample content",
+        "title":"Naples"
+      },
+      { 
+        "lat": "48.8566",
+        "lng":"2.3522",
+        "cat":"cat 2",
+        "ID": 4,
+        "color" : 'cyan',
+        "content":"Sample content",
+        "title":"Paris"
+      },
+      { 
+        "lat": "48.1351",
+        "lng":"11.5820",
+        "cat":"cat 2",
+        "ID": 5,
+        "color" : 'cyan',
+        "content":"Sample content",
+        "title":"Munich"
+      },
+      { 
+        "lat": "45.4715",
+        "lng":"10.5333",
+        "cat":"cat 3",
+        "ID": 6,
+        "color" : 'green',
+        "content":"Sample content",
+        "title":"Desenzano"
+      },
+      { 
+        "lat": "44.8015",
+        "lng":"10.3279",
+        "cat":"cat 2",
+        "ID": 7,
+        "color" : 'cyan',
+        "content":"Sample content",
+        "title":"Parma"
+      }
+    ];
+  </script>
+  
+  </body>
+</html>
